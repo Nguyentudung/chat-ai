@@ -16,3 +16,9 @@ cd chat-ai-pyqt5
 pip install -r setup.txt
 python app.py
 ```
+---
+
+## 📄 Giấy phép
+
+Phần mềm này được phát hành theo giấy phép [MIT License](LICENSE).  
+© 2025 Nguyễn Tư Dũng. Bạn được phép sử dụng, chỉnh sửa, phân phối lại miễn phí.
