@@ -1,4 +1,4 @@
-# Chat AI PyQt5 🎉
+# Chat AI 🎉
 
 Một ứng dụng chatbot AI đơn giản với giao diện giống Messenger, hỗ trợ:
 - ✅ Giao diện dark/light mode (tui làm cho vui nên lười chỉnh màu)
