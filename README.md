@@ -12,9 +12,7 @@ Một ứng dụng chatbot AI đơn giản với giao diện giống Messenger, 
 ## 🚀 Cài đặt
 
 ```bash
-cd chat-ai-pyqt5
 pip install -r setup.txt
-python app.py
 ```
 ---
 
