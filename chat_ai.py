@@ -225,7 +225,7 @@ class ChatApp(QWidget):
     def get_bot_response(self, user_input):
         try:
             response = client.chat.completions.create(
-                model="google/gemma-3n-e2b-it:free", # Có thể thay bằng model mà bạn muốn nha
+                model="google/gemma-3n-e2b-it:free", # tùy chọn mô hình mà bạn muốn nha
                 messages=[
                             {"role": "user", "content": user_input}
                         ],
@@ -339,5 +339,4 @@ if __name__ == "__main__":
     window = ChatApp()
     window.show()
     sys.exit(app.exec_())
-
 
