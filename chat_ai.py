@@ -11,7 +11,7 @@ from text_to_speech import TTS
 
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key="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",  # Thay bằng API key của bạn
+    api_key="sk-...",  # Thay bằng API key của bạn
 )
 
 def svg_to_icon(svg_path, size=(24, 24)):
@@ -225,7 +225,7 @@ class ChatApp(QWidget):
     def get_bot_response(self, user_input):
         try:
             response = client.chat.completions.create(
-                model="google/gemma-3n-e2b-it:free",
+                model="google/gemma-3n-e2b-it:free", # Có thể thay bằng model mà bạn muốn nha
                 messages=[
                             {"role": "user", "content": user_input}
                         ],
@@ -339,4 +339,5 @@ if __name__ == "__main__":
     window = ChatApp()
     window.show()
     sys.exit(app.exec_())
+
 
