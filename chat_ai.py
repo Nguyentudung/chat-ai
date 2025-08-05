@@ -222,15 +222,27 @@ class ChatApp(QWidget):
             self.typing_item = None
             self.typing_widget = None
 
+    def clean_markdown(self, text):
+        """
+        Loại bỏ các ký tự markdown như **text**, *text*, __text__, _text_ khỏi chuỗi.
+        """
+        import re
+        # Xóa **text** và __text__
+        text = re.sub(r"(\*\*|__)(.*?)\1", r"\2", text)
+        # Xóa *text* và _text_
+        text = re.sub(r"(\*|_)(.*?)\1", r"\2", text)
+        return text
+
     def get_bot_response(self, user_input):
         try:
             response = client.chat.completions.create(
-                model="google/gemma-3n-e2b-it:free", # tùy chọn mô hình mà bạn muốn nha
+                model="google/gemma-3n-e2b-it:free",
                 messages=[
                             {"role": "user", "content": user_input}
                         ],
             )
             bot_reply = response.choices[0].message.content.strip()
+            bot_reply = self.clean_markdown(bot_reply)
             print("Bot:", bot_reply)
         except Exception as e:
             bot_reply = "❌ Có lỗi xảy ra khi gọi API: " + str(e)
